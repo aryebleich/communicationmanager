@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a17">
+  <meta name="description" content="A practical blueprint for bringing voice and messaging together with Asterisk, FreePBX, and carrier APIs.">
+  <title>Relay — Voice & messaging, on your terms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Relay home"><span class="brand-mark"><span></span><span></span><span></span></span>relay<span class="brand-period">.</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#platform">Platform</a><a href="#blueprint">Blueprint</a><a href="#code">For developers</a>
+      <a class="nav-cta" href="#blueprint">Explore the guide <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR INFRASTRUCTURE. YOUR RULES.</div>
+        <h1>Every conversation.<br><span>On your terms.</span></h1>
+        <p class="hero-lede">Bring calls and messages into one programmable system. Keep the flexibility of open-source tools, with a carrier connection built for the real world.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#blueprint">See how it works <span>↓</span></a><a class="text-link" href="#platform">Meet the stack <span>↗</span></a></div>
+        <div class="hero-proof"><div class="avatar-stack"><i>A</i><i>V</i><i>J</i></div><span>Open tools. Real phone numbers.<br><strong>One connected system.</strong></span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of connected voice and messaging channels">
+        <div class="art-grid"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="node node-phone"><span class="node-icon">⌕</span><small>VOICE</small><b>Live calls</b><span class="node-status"><i></i> Connected</span></div>
+        <div class="node node-message"><span class="node-icon message-icon">↗</span><small>MESSAGING</small><b>SMS / MMS</b><span class="node-status"><i></i> Connected</span></div>
+        <div class="core-node"><div class="core-logo"><span></span><span></span><span></span></div><strong>your<br>comms</strong><small>ONE CONTROL PLANE</small></div>
+        <div class="signal signal-a">SIP <span>·······</span></div><div class="signal signal-b">HTTP <span>·······</span></div>
+        <div class="art-caption"><span class="caption-line"></span> A simple architecture. Room to grow.</div>
+      </div>
+      <div class="hero-bottom"><span>AN OPEN, CODE-MANAGED COMMUNICATIONS STACK</span><span class="scroll-hint">SCROLL TO EXPLORE <b>↓</b></span></div>
+    </section>
+
+    <section class="trust-strip" aria-label="Technology stack"><div class="shell trust-inner"><span>BUILT AROUND TOOLS YOU CAN OWN</span><b><span class="asterisk">✳</span> Asterisk</b><b class="freepbx">FreePBX</b><b class="telnyx">Telnyx <i>↗</i></b><b class="voip">VoIP.ms</b><b class="jasmin">Jasmin SMS</b></div></section>
+
+    <section class="section shell" id="platform">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">01 / THE PLATFORM</div><h2>One system.<br><span>Two powerful channels.</span></h2></div><p>Use the right tool for each job, then connect them through your application. Your carrier supplies the phone numbers and network reach; your software shapes the experience.</p></div>
+      <div class="platform-grid">
+        <article class="platform-card voice-card"><div class="card-top"><span class="card-icon">⌕</span><span class="card-index">CHANNEL 01</span></div><h3>Voice, made programmable.</h3><p>Route inbound and outbound calls through Asterisk. Build extensions, IVRs, queues, and call flows with the FreePBX interface—or connect application logic through AMI and ARI.</p><div class="card-tags"><span>ASTERISK</span><span>FREEPBX</span><span>AMI / ARI</span></div><div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="platform-card message-card"><div class="card-top"><span class="card-icon">↗</span><span class="card-index">CHANNEL 02</span></div><h3>Messages, right to your app.</h3><p>Let a carrier handle SMS/MMS delivery and send inbound messages to your HTTPS webhook. For direct SMPP workflows, add a gateway such as Jasmin.</p><div class="card-tags"><span>WEBHOOKS</span><span>SMS / MMS</span><span>SMPP*</span></div><div class="message-preview"><span class="message-avatar">M</span><div><b>New message received</b><small>“Hey, I’m running a few minutes late.”</small></div><span class="message-time">now</span></div></article>
+      </div>
+      <p class="footnote">*SMPP is generally for teams with direct carrier connectivity and the operational capacity to run it.</p>
+    </section>
+
+    <section class="blueprint-section" id="blueprint"><div class="shell blueprint-layout">
+      <div class="blueprint-intro"><div class="eyebrow">02 / THE BLUEPRINT</div><h2>From server<br>to first call.</h2><p>A practical path from an empty Linux host to a connected communications stack. Start small, secure each layer, then add application logic.</p><a class="text-link light-link" href="#code">Jump to the code <span>↓</span></a><div class="blueprint-decoration">01—04</div></div>
+      <div class="steps">
+        <article class="step"><div class="step-num">01</div><div class="step-content"><div class="step-head"><h3>Prepare your voice server</h3><span class="step-label">ASTERISK + FREEPBX</span></div><p>Choose a supported Linux host, install Asterisk and FreePBX using their current official documentation, and complete initial setup. Confirm version and OS compatibility before you deploy.</p><div class="step-note"><span>↳</span> Keep the admin interface behind a VPN or trusted access policy.</div></div></article>
+        <article class="step"><div class="step-num">02</div><div class="step-content"><div class="step-head"><h3>Connect a SIP trunk</h3><span class="step-label">VOICE CARRIER</span></div><p>Choose a provider that supports your region and use its trunking guide to configure authentication, endpoint, and caller ID. Test inbound and outbound calling separately.</p><div class="step-note"><span>↳</span> Use a dedicated trunk credential; never reuse an admin password.</div></div></article>
+        <article class="step"><div class="step-num">03</div><div class="step-content"><div class="step-head"><h3>Give your app a voice interface</h3><span class="step-label">AMI / ARI</span></div><p>Use AMI for manager events and actions, or ARI for application-driven call control. Create a least-privilege account and keep management ports private.</p><div class="step-note"><span>↳</span> Prefer ARI for new application-controlled call flows.</div></div></article>
+        <article class="step"><div class="step-num">04</div><div class="step-content"><div class="step-head"><h3>Route messages to your app</h3><span class="step-label">SMS WEBHOOK</span></div><p>Point your carrier’s inbound messaging webhook at an HTTPS endpoint. Validate the provider’s signature, acknowledge quickly, and process messages asynchronously.</p><div class="step-note"><span>↳</span> For high-volume direct SMPP, evaluate a gateway like Jasmin.</div></div></article>
+      </div>
+    </div></section>
+
+    <section class="section shell code-section" id="code">
+      <div class="section-heading code-heading"><div><div class="eyebrow dark-eyebrow">03 / FOR DEVELOPERS</div><h2>Your app is<br><span>in the conversation.</span></h2></div><p>Keep the integration thin: your carrier delivers the message, your endpoint verifies and accepts it, and your application decides what happens next.</p></div>
+      <div class="code-window"><div class="code-toolbar"><div class="window-dots"><i></i><i></i><i></i></div><div class="code-tabs" role="tablist" aria-label="Code examples"><button class="code-tab active" role="tab" aria-selected="true" data-tab="webhook">Webhook · Express</button><button class="code-tab" role="tab" aria-selected="false" data-tab="ami">Call events · AMI</button></div><button class="copy-button" aria-label="Copy code">COPY <span>▢</span></button></div>
+        <div class="code-panel active" id="panel-webhook" role="tabpanel"><pre><code><span class="code-purple">import</span> express <span class="code-purple">from</span> <span class="code-green">'express'</span>;
+<span class="code-purple">const</span> app = express();
+app.use(express.json());
+
+app.post(<span class="code-green">'/sms-webhook'</span>, <span class="code-purple">async</span> (req, res) =&gt; {
+  <span class="code-comment">// Verify the carrier signature before trusting this payload.</span>
+  <span class="code-purple">if</span> (!verifyCarrierSignature(req)) {
+    <span class="code-purple">return</span> res.sendStatus(<span class="code-number">401</span>);
+  }
+
+  <span class="code-purple">const</span> { from, to, text } = req.body;
+  <span class="code-purple">await</span> enqueueInboundMessage({ from, to, text });
+  res.sendStatus(<span class="code-number">200</span>);
+});
+
+app.listen(process.env.PORT ?? <span class="code-number">3000</span>);</code></pre></div>
+        <div class="code-panel" id="panel-ami" role="tabpanel" hidden><pre><code><span class="code-comment">// Keep AMI reachable only on a trusted network.</span>
+<span class="code-purple">const</span> ami = <span class="code-purple">new</span> AmiClient({
+  host: process.env.AMI_HOST,
+  port: <span class="code-number">5038</span>,
+  username: process.env.AMI_USERNAME,
+  password: process.env.AMI_PASSWORD,
+});
+
+ami.connect();
+ami.on(<span class="code-green">'managerevent'</span>, (event) =&gt; {
+  <span class="code-purple">if</span> (event.event === <span class="code-green">'Newchannel'</span>) {
+    console.log(<span class="code-green">'New channel started'</span>);
+    <span class="code-comment">// Avoid logging phone numbers or message contents.</span>
+  }
+});</code></pre></div>
+        <div class="code-footer"><span><i></i> NODE.JS</span><span>EXAMPLE ONLY · ADD SIGNATURE VERIFICATION FOR YOUR CARRIER</span></div>
+      </div>
+      <div class="security-callout"><span class="shield">✓</span><p><strong>Security is part of the design.</strong> Restrict SIP, AMI, and ARI access; use TLS/HTTPS where supported; rotate secrets; validate webhook signatures; and check local rules for consent, recording, and messaging.</p><a href="#blueprint">Review the setup notes ↗</a></div>
+    </section>
+
+    <section class="closing-cta"><div class="shell closing-inner"><div><div class="eyebrow">READY WHEN YOU ARE</div><h2>Build a line that<br><span>works your way.</span></h2></div><a class="button button-dark" href="#blueprint">Start with the blueprint <span>↗</span></a><div class="closing-orbit"></div></div></section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark"><span></span><span></span><span></span></span>relay<span class="brand-period">.</span></a><span>Open-source building blocks. Thoughtful integrations.</span><a href="#home">BACK TO TOP ↑</a></div><div class="shell footer-disclaimer">Relay is an independent concept site, not affiliated with Asterisk, FreePBX, or any carrier. Always follow current vendor documentation and applicable telecom regulations.</div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
